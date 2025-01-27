@@ -3,13 +3,12 @@ import { getMessaging, getToken, isSupported } from "firebase/messaging";
 
 // Replace the following with your app's Firebase project configuration
 const firebaseConfig = {
-  apiKey: null,
-  authDomain: null,
-  projectId: null,
-  storageBucket: null,
-  messagingSenderId: null,
-  appId: null,
-  measurementId: null,
+  apiKey: "AIzaSyBslKKAhMMily5N9GwDNH5pGafFQ2iEQs8",
+  authDomain: "velvet-sky-serious.firebaseapp.com",
+  projectId: "velvet-sky-serious",
+  storageBucket: "velvet-sky-serious.firebasestorage.app",
+  messagingSenderId: "987155726872",
+  appId: "1:987155726872:web:fd2770399687e50e6c396d"
 };
 
 const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();

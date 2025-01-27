@@ -2,9 +2,21 @@
 
 import { Button } from "@/components/ui/button";
 import useFcmToken from "@/hooks/useFcmToken";
+import { useEffect } from "react";
 
 export default function Home() {
   const { token, notificationPermissionStatus } = useFcmToken();
+
+  useEffect(() => {
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker
+        .register("/sw.js")
+        .then(() => console.log("Service Worker registriert"))
+        .catch((error) =>
+          console.error("Service Worker Registrierung fehlgeschlagen:", error)
+        );
+    }
+  }, []);
 
   const handleTestNotification = async () => {
     const response = await fetch("/send-notification", {
